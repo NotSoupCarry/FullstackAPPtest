@@ -1,7 +1,7 @@
 package com.example.backend.controllers;
 import org.springframework.web.bind.annotation.*;
 
-import com.example.backend.models.User;
+import com.example.backend.models.Utente;
 import com.example.backend.repositories.UserRepository;
 
 import java.util.List;
@@ -16,12 +16,12 @@ public class UserController {
     }
 
     @GetMapping
-    public List<User> getAllUsers() {
+    public List<Utente> getAllUsers() {
         return userRepository.findAll();
     }
 
     @PostMapping
-    public User createUser(@RequestBody User user) {
+    public Utente createUser(@RequestBody Utente user) {
         return userRepository.save(user);
     }
 }
